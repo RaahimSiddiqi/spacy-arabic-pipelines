@@ -36,6 +36,6 @@ def evaluate(model_dir: str, dev_path: str):
 
 
 if __name__ == "__main__":
-    model = r"Models\\ar_ner_trf_extended"
+    model = r"Models\\ar_ner_cpu"
     data = r"Data\test.spacy"
     evaluate(model, data)
