@@ -34,8 +34,8 @@ Download them and place them in the Models folder.
 |-------------------|--------------------|----------|-----------|
 | SinaLab           | AraBERTV2          | N/A      | 88.4%     |
 | Ours              | Spacy (cpu)        | 86.11    | 86.4%     |
-| Ours              | Spacy-Transformers | 90.02%   | 91.0%     |
-| Ours** (extended) | Spacy-Transformers | 90.9%    | N/A       |
+| Ours              | Spacy-Transformers | 90.02%   | **91.0%** |
+| Ours** (extended) | Spacy-Transformers | **90.9%**   | N/A       |
 
 **Trained using a combination of train and test set.
 
