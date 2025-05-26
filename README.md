@@ -16,10 +16,10 @@ be acquired from the SinaLab repository for [sinatools](https://github.com/SinaL
 
 ```
 # GPU
-python -m spacy train trf_config.cfg --output ./Models/output --paths.train ./Data/train.spacy --paths.dev ./Data/val.spacy --gpu-id 0
+python -m spacy train ./Configs/trf_config.cfg --output ./Models/output --paths.train ./Data/train.spacy --paths.dev ./Data/val.spacy --gpu-id 0
 
 # CPU
-python -m spacy train cpu_config.cfg --output ./Models/output --paths.train ./Data/train.spacy --paths.dev ./Data/val.spacy
+python -m spacy train ./Configs/cpu_config.cfg --output ./Models/output --paths.train ./Data/train.spacy --paths.dev ./Data/val.spacy
 ```
 
 Due to large size (400mb+) of transformers based models, they are published separately in releases. 
@@ -43,27 +43,28 @@ Download them and place them in the Models folder.
 
 The following table compares the F1 scores across various models we trained.
 
-| Entity type | Spacy (CPU) | Transformers | Transformers Extended |
-|-------------|-------------|--------------|-----------------------|
-| PERS        | 0.8708      | 0.9442       | 0.9503                |
-| ORG         | 0.8864      | 0.9289       | 0.9336                |
-| DATE        | 0.9296      | 0.9465       | 0.9420                |
-| OCC         | 0.8380      | 0.9018       | 0.8893                |
-| FAC         | 0.7209      | 0.7979       | 0.8148                |
-| LOC         | 0.7733      | 0.8212       | 0.8105                |
-| GPE         | 0.8858      | 0.9290       | 0.9282                |
-| NORP        | 0.6996      | 0.7401       | 0.7777                |
-| ORDINAL     | 0.9210      | 0.9412       | 0.9461                |
-| EVENT       | 0.7758      | 0.7842       | 0.8029                |
-| CARDINAL    | 0.7653      | 0.8528       | 0.9070                |
-| QUANTITY    | 0.0000      | 0.4444       | 0.4444                |
-| LANGUAGE    | 0.7143      | 0.8125       | 0.7429                |
-| MONEY       | 0.6190      | 0.6957       | 0.8837                |
-| TIME        | 0.6667      | 0.7273       | 0.8116                |
-| PRODUCT     | 0.4286      | 0.7143       | 0.5556                |
-| LAW         | 0.7647      | 0.8542       | 0.8542                |
-| PERCENT     | 0.7586      | 0.9600       | 1.0000                |
-| WEBSITE     | 0.4658      | 0.5942       | 0.6447                |
-| CURR        | 0.0000      | 0.0000       | 0.0000                |
-| UNIT        | 0.0000      | 0.0000       | 0.0000                |
+| Entity type | SinaLab | Spacy (CPU) | Transformers | Transformers Extended  |
+|-------------|---------|-------------|--------------|------------------------|
+| PERS        | 0.9129  | 0.8708      | 0.9442       | 0.9503                 |
+| ORG         | 0.8997  | 0.8864      | 0.9289       | 0.9336                 |
+| DATE        | 0.9323  | 0.9296      | 0.9465       | 0.9420                 |
+| OCC         | 0.8193  | 0.8380      | 0.9018       | 0.8893                 |
+| FAC         | 0.6895  | 0.7209      | 0.7979       | 0.8148                 |
+| LOC         | 0.7524  | 0.7733      | 0.8212       | 0.8105                 |
+| GPE         | 0.9470  | 0.8858      | 0.9290       | 0.9282                 |
+| NORP        | 0.6931  | 0.6996      | 0.7401       | 0.7777                 |
+| ORDINAL     | 0.9430  | 0.9210      | 0.9412       | 0.9461                 |
+| EVENT       | 0.6425  | 0.7758      | 0.7842       | 0.8029                 |
+| CARDINAL    | 0.8505  | 0.7653      | 0.8528       | 0.9070                 |
+| QUANTITY    | 0.2000  | 0.0000      | 0.4444       | 0.4444                 |
+| LANGUAGE    | 0.8060  | 0.7143      | 0.8125       | 0.7429                 |
+| MONEY       | 0.8649  | 0.6190      | 0.6957       | 0.8837                 |
+| TIME        | 0.5526  | 0.6667      | 0.7273       | 0.8116                 |
+| PRODUCT     | 0.2857  | 0.4286      | 0.7143       | 0.5556                 |
+| LAW         | 0.8814  | 0.7647      | 0.8542       | 0.8542                 |
+| PERCENT     | 0.4426  | 0.7586      | 0.9600       | 1.0000                 |
+| WEBSITE     | 0.4936  | 0.4658      | 0.5942       | 0.6447                 |
+| CURR        | 0.9136  | 0.0000      | 0.0000       | 0.0000                 |
+| UNIT        | 0.2500  | 0.0000      | 0.0000       | 0.0000                 |
+
 
