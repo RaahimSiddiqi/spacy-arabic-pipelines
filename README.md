@@ -12,8 +12,40 @@ and consisting of about 550k tokens. Further details can be found on their GitHu
 Morphology, POS, Tagger, and Lemma data will not be provided within this repo due to the size of the data. This data can
 be acquired from the SinaLab repository for [sinatools](https://github.com/SinaLab/sinatools). 
 
-## Training
+## Usage
 
+```
+import spacy
+
+
+def demo(model_dir, sentences):
+    nlp = spacy.load(model_dir)
+
+    for sent in sentences:
+        doc = nlp(sent)
+        print(f"\n📝  Sentence: {sent}")
+        if doc.ents:
+            for ent in doc.ents:
+                print(f" • {ent.text:<25}  → {ent.label_}  (start={ent.start_char}, end={ent.end_char})")
+        else:
+            print("  • No entities found")
+
+
+if __name__ == "__main__":
+    model_path = r"Models\ar_ner_cpu"  
+
+    sample_sentences = [
+        "تخرج عبد الغني المجدلي من جامعة بيرزيت عام 1972.",
+        "اجتمع رئيس بلدية البيرة مع الهيئة الإسلامية في القدس.",
+        "سيعقد المؤتمر يوم 12/5/2025 في مدينة الرياض."
+    ]
+
+    demo(model_path, sample_sentences)
+```
+
+ 
+
+## Training
 ```
 # GPU
 python -m spacy train ./Configs/trf_config.cfg --output ./Models/output --paths.train ./Data/train.spacy --paths.dev ./Data/val.spacy --gpu-id 0
