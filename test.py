@@ -15,7 +15,7 @@ def demo(model_dir, sentences):
 
 
 if __name__ == "__main__":
-    model_path = r"Models\ar_ner_cpu"  # adjust if needed
+    model_path = r"Models\ar_ner_cpu"
 
     sample_sentences = [
         "تخرج عبد الغني المجدلي من جامعة بيرزيت عام 1972.",
